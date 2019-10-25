@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="phoneNumber"
+            type="String" />
+
+        <variable
+            name="destinationAddress"
+            type="String" />
+
+        <import
+            alias="converter"
+            type="com.gokada.core.utils.Converters" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.endTrip.EndTripFragment">
+
+        <!--<androidx.appcompat.widget.Toolbar
+            android:id="@+id/end_trip_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back" />-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/leftGuide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/gokada_super_app_big_guideline" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/rightGuide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/gokada_super_app_guideline" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/end_destination"
+                    style="@style/GokadaSuperAppText"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="@dimen/gokada_super_app_padding"
+                    android:layout_marginBottom="8dp"
+                    android:text="@{destinationAddress}"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/ride_time"
+                    app:layout_constraintEnd_toStartOf="@+id/ride_type_image"
+                    app:layout_constraintStart_toStartOf="@+id/end_trip_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Ambrose Ali University" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/end_trip_btn"
+                    style="@style/GokadaMaterialButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/red"
+                    android:padding="15dp"
+                    android:text="@string/button_end_trip_text"
+                    android:textColor="@android:color/white"
+                    app:cornerRadius="5dp"
+                    app:icon="@drawable/ic_swipe_right"
+                    app:iconTint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/rightGuide"
+                    app:layout_constraintStart_toStartOf="@id/leftGuide" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ride_payment_type"
+                    style="@style/GokadaSuperAppText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/cash_text"
+                    app:layout_constraintEnd_toEndOf="@id/rightGuide"
+                    app:layout_constraintTop_toTopOf="@+id/ride_time" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ride_type_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:src="@drawable/ic_green_cash"
+                    app:layout_constraintBottom_toBottomOf="@+id/ride_payment_type"
+                    app:layout_constraintEnd_toStartOf="@+id/ride_payment_type"
+                    app:layout_constraintTop_toTopOf="@+id/ride_payment_type" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/phone_number"
+                    style="@style/GokadaSuperAppText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@{converter.formatPhoneNumWithCountryCode(phoneNumber)}"
+                    app:layout_constraintBottom_toTopOf="@+id/end_trip_btn"
+                    app:layout_constraintStart_toStartOf="@+id/end_trip_btn"
+                    tools:text="+2347000000000" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ride_time"
+                    style="@style/GokadaSuperAppText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat"
+                    app:layout_constraintBottom_toTopOf="@+id/phone_number"
+                    app:layout_constraintStart_toStartOf="@+id/end_destination"
+                    tools:text="30 Min" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

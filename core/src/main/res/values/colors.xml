@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00C795</color>
+    <color name="colorPrimaryDark">#00C795</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+
+    <color name="gokada_green">#00C795</color>
+    <color name="default_text_color">#191919</color>
+    <color name="faint_text_color">#AAA8A8</color>
+    <color name="faint_text_color_2">#FDE7E7E7</color>
+    <color name="deeper_gokada_green">#12926A</color>
+
+    <color name="red">#FF0000</color>
+    <color name="warning">#ffc107</color>
+    <color name="yellow">#FCC038</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="home_card_color">#F2F2F2</color>
+    <color name="settings_background_color">#F4F4F4</color>
+    <color name="line_color">#B5B5B5</color>
+    <color name="location_background">#EFFAF7</color>
+    <color name="fare_amount_background">#0AA57E</color>
+    <color name="bottom_nav_text_color">#A0A0A0</color>
+    <color name="black">#000000</color>
+</resources>

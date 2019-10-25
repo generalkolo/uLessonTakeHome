@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GokadaSuperAppText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/gokada_super_app_text_size</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="GokadaSuperAppDropdownText">
+        <item name="android:textSize">@dimen/gokada_super_app_text_size</item>
+        <item name="android:textColor">@color/gokada_green</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="GokadaSuperAppTextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeColor">@android:color/darker_gray</item>
+        <item name="android:colorControlActivated">@android:color/black</item>
+        <item name="android:colorControlNormal">@android:color/black</item>
+    </style>
+
+    <style name="GokadaMaterialButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="cornerRadius">@dimen/gokada_card_corner_radius</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="GokadaBorderLessButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="GokadaBorderButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+    </style>
+
+    <style name="GokadaMaterialButton.Filled" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="cornerRadius">@dimen/gokada_card_corner_radius</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="rippleColor">@android:color/white</item>
+    </style>
+
+    <style name="GokadaMaterialIconButton.Filled" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="cornerRadius">@dimen/gokada_card_corner_radius</item>
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="rippleColor">@android:color/white</item>
+    </style>
+
+    <style name="GokadaSuperAppCard" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="cardElevation">@dimen/gokada_card_higher_elevation</item>
+        <item name="rippleColor">@android:color/darker_gray</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="GokadaSuperAppCard2" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?android:attr/actionBarSize</item>
+        <item name="cardElevation">@dimen/gokada_card_higher_elevation</item>
+        <item name="rippleColor">@android:color/darker_gray</item>
+        <item name="cardBackgroundColor">@color/faint_text_color_2</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="GokadaSuperAppDialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+    <!--For radio button-->
+    <style name="radio_button_style" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="colorControlActivated">@android:color/black</item>
+    </style>
+
+</resources>

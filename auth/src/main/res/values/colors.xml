@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ash_color">#A5A5A5</color>
+    <color name="inactive_slider_color">#EAEAEA</color>
+    <color name="active_slider_color">#00C795</color>
+</resources>

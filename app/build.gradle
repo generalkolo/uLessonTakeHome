@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+//apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion GokadaVersions.compileSdkVersion
+
+    defaultConfig {
+        applicationId GokadaCoreDependencies.packageName
+
+        minSdkVersion GokadaVersions.minSdkVersion
+        targetSdkVersion GokadaVersions.targetSdkVersion
+
+        versionCode GokadaVersions.versionCode
+        versionName GokadaVersions.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders = [
+                fabric_api_key: GokadaCoreDependencies.FABRIC_API_KEY,
+                google_maps_key: GokadaCoreDependencies.GOOGLE_MAPS_API_KEY
+        ]
+
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+        multiDexEnabled true
+    }
+    dataBinding {
+        enabled = true
+    }
+    kapt {
+        javacOptions {
+            // Increase the max count of errors from annotation processors.
+            // Default is 100.
+            option("-Xmaxerrs", 2000)
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            versionNameSuffix "-debug"
+            applicationIdSuffix ".debug"
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation(
+            fileTree(dir: 'libs', include: ['*.jar']),
+            GokadaCoreDependencies.kotlin,
+            GokadaCoreDependencies.appCompat,
+            GokadaCoreDependencies.coreKtx,
+            GokadaCoreDependencies.lifecycle,
+            GokadaCoreDependencies.constraintLayout,
+            GokadaCoreDependencies.navigationFragmentKtx,
+            GokadaCoreDependencies.navigationUiKtx,
+            GokadaCoreDependencies.multidex,
+
+            GokadaGooglePlayDependenciesDependencies.googleMaps,
+            GokadaGooglePlayDependenciesDependencies.places,
+
+            GokadaDependencyInjectionDependencies.dagger,
+            GokadaDependencyInjectionDependencies.daggerAndroidSupport,
+
+            GokadaViewDependencies.shimmerLayout,
+            GokadaViewDependencies.fresco,
+            GokadaViewDependencies.materialComponent,
+
+            GokadaUtilityDependencies.recyclerAnimator,
+            GokadaUtilityDependencies.overscrollDecor,
+            GokadaUtilityDependencies.lottie,
+            GokadaUtilityDependencies.timber,
+
+            GokadaAnalyticsDependencies.fabric,
+            GokadaAnalyticsDependencies.analytics,
+
+            GokadaFirebaseDependencies.analytics,
+            GokadaFirebaseDependencies.messaging,
+
+            GokadaWorkManagerDependencies.workManagerRx,
+
+            project (":core"),
+            project (":domain"),
+            project (":auth"),
+            project (":repository"),
+            project (":local"),
+            project (":map"),
+            project (":preference"),
+            project (":remote")
+    )
+
+    kapt(
+            GokadaDependencyInjectionDependencies.daggerAndroidProcessor,
+            GokadaDependencyInjectionDependencies.daggerCompiler,
+            GokadaCoreDependencies.lifecycleCompiler
+    )
+
+    testImplementation(
+            GokadaTestDependencies.junit
+    )
+
+
+    androidTestImplementation(
+            GokadaAndroidTestDependencies.espresso,
+            GokadaAndroidTestDependencies.testRunner
+    )
+}

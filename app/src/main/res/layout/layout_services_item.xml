@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Service"
+            type="com.gokada.ng.models.ServiceModel" />
+
+        <variable
+            name="ClickListener"
+            type="com.gokada.core.listeners.BindableItemClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> ClickListener.onItemClicked(Service)}">
+
+        <TextView
+            android:id="@+id/textView6"
+            style="@style/GokadaSuperAppText"
+            android:layout_width="0dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@{Service.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/service_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"
+            tools:text="G Okada" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/service_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_round_background"
+            app:imageResource="@{Service.iconResource}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_motorcycle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

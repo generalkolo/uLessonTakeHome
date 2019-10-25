@@ -1,0 +1,31 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="GokadaSuperAppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+        <item name="radioButtonStyle">@style/Widget.MaterialComponents.CompoundButton.RadioButton</item>
+    </style>
+
+    <style name="OtpWidget.OtpView" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@null</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="GokadaSuperAppTheme.NoActionBar" parent="GokadaSuperAppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="GokadaSuperAppTheme.Splash" parent="GokadaSuperAppTheme.NoActionBar">
+        <item name="android:windowBackground">@drawable/ic_splash_background</item>
+    </style>
+
+</resources>

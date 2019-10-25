@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GokadaSuperAppText.Header" parent="GokadaSuperAppText">
+        <item name="android:textSize">@dimen/gokada_super_app_large_text_size</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <style name="GokadaSuperAppText.SuperHeader" parent="GokadaSuperAppText">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/gokada_super_app_super_large_text_size</item>
+    </style>
+
+    <style name="GokadaSuperAppText.Small" parent="GokadaSuperAppText">
+        <item name="android:textSize">@dimen/gokada_super_app_small_text_size</item>
+    </style>
+
+    <style name="GokadaSuperAppText.Medium" parent="GokadaSuperAppText">
+        <item name="android:textSize">@dimen/gokada_super_app_medium_text_size</item>
+    </style>
+
+    <style name="GokadaSuperAppText.GrayedOut" parent="GokadaSuperAppText">
+        <item name="android:textSize">@dimen/gokada_super_app_text_size</item>
+        <item name="android:textColor">@color/faint_text_color</item>
+    </style>
+</resources>

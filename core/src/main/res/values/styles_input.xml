@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GokadaSuperAppTextInput.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="boxStrokeColor">@color/faint_text_color</item>
+        <item name="boxStrokeWidth">1dp</item>
+    </style>
+</resources>

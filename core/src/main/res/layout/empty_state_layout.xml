@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="buttonLabel"
+            type="String" />
+
+        <variable
+            name="hintText"
+            type="String" />
+
+        <variable
+            name="stateImage"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="buttonImage"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/no_rides_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/no_ride_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@{stateImage}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_location" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/no_ride_hint"
+            style="@style/GokadaSuperAppText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{hintText}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_ride_image"
+            tools:text="Your weekly stats will appear here" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stateButton"
+            style="@style/GokadaBorderButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="20dp"
+            android:text="@{buttonLabel}"
+            android:textColor="@color/gokada_green"
+            app:icon="@{buttonImage}"
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/no_ride_hint"
+            app:layout_constraintStart_toStartOf="@+id/no_ride_hint"
+            app:layout_constraintTop_toBottomOf="@+id/no_ride_hint"
+            app:strokeColor="@color/gokada_green"
+            tools:text="Start a ride" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

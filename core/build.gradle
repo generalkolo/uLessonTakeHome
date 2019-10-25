@@ -1,0 +1,82 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
+android {
+    compileSdkVersion GokadaVersions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion GokadaVersions.minSdkVersion
+        targetSdkVersion GokadaVersions.targetSdkVersion
+
+        versionCode GokadaVersions.versionCode
+        versionName GokadaVersions.versionName
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation (
+            fileTree(dir: 'libs', include: ['*.jar']),
+
+            GokadaCoreDependencies.appCompat,
+            GokadaCoreDependencies.coreKtx,
+            GokadaCoreDependencies.navigationFragmentKtx,
+            GokadaCoreDependencies.navigationUiKtx,
+
+            GokadaCoreDependencies.constraintLayout,
+            GokadaViewDependencies.materialComponent,
+
+            GokadaUtilityDependencies.viewPagerTransformer,
+            GokadaUtilityDependencies.materialRatingBar,
+            GokadaUtilityDependencies.lottie,
+
+            GokadaDependencyInjectionDependencies.dagger,
+            GokadaDependencyInjectionDependencies.daggerAndroidSupport,
+
+            GokadaAsyncDependencies.rxAndroid,
+
+            GokadaAnalyticsDependencies.fabric,
+
+            GokadaGooglePlayDependenciesDependencies.googleMaps,
+            GokadaGooglePlayDependenciesDependencies.playServicesAuth,
+            GokadaGooglePlayDependenciesDependencies.playServicesAuthPhone,
+            /**
+             * Utility dependencies
+             */
+            GokadaUtilityDependencies.timber,
+
+            GokadaViewDependencies.shimmerLayout,
+
+            project(":local"),
+            project(":repository"),
+            project(":domain")
+    )
+
+    debugImplementation (
+            GokadaUtilityDependencies.debugDatabaseLibrary
+    )
+
+    api (
+            /**
+             * Remote dependencies
+             */
+            GokadaNetworkDependencies.okhttp,
+            GokadaNetworkDependencies.loggingInterceptor,
+            GokadaNetworkDependencies.retrofit,
+            GokadaNetworkDependencies.gsonConverter,
+            GokadaNetworkDependencies.rxJavaAdapter,
+            GokadaNetworkDependencies.stetho,
+            GokadaNetworkDependencies.stethoOkhttp,
+
+            project(":remote")
+    )
+
+    kapt(
+            GokadaDependencyInjectionDependencies.daggerAndroidProcessor,
+            GokadaDependencyInjectionDependencies.daggerCompiler
+    )
+}

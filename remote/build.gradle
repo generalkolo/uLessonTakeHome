@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion GokadaVersions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion GokadaVersions.minSdkVersion
+        targetSdkVersion GokadaVersions.targetSdkVersion
+
+        versionCode GokadaVersions.versionCode
+        versionName GokadaVersions.versionName
+
+        buildConfigField("String", "BASE_URL_RIDE_HAILING", GokadaCoreDependencies.BASE_URL_RIDE_HAILING)
+        buildConfigField("String", "BASE_URL_WALLET", GokadaCoreDependencies.BASE_URL_WALLET)
+        buildConfigField("String", "BASE_URL_PAYMENT", GokadaCoreDependencies.BASE_URL_PAYMENT)
+        buildConfigField("String", "WALLET_PAYMENT_API_AUTHORIZATION_TOKEN", GokadaCoreDependencies.WALLET_PAYMENT_API_AUTHORIZATION_TOKEN)
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation (
+            fileTree(dir: 'libs', include: ['*.jar']),
+
+            GokadaCoreDependencies.kotlin,
+
+            GokadaDependencyInjectionDependencies.javax,
+            GokadaDependencyInjectionDependencies.javaxAnnotation,
+
+            GokadaNetworkDependencies.okhttp,
+            GokadaNetworkDependencies.loggingInterceptor,
+            GokadaNetworkDependencies.retrofit,
+            GokadaNetworkDependencies.gsonConverter,
+            GokadaNetworkDependencies.rxJavaAdapter,
+            GokadaNetworkDependencies.stetho,
+            GokadaNetworkDependencies.stethoOkhttp,
+
+            GokadaUtilityDependencies.timber,
+
+            GokadaDependencyInjectionDependencies.dagger,
+
+            project(":repository")
+    )
+
+    kapt (
+            GokadaDependencyInjectionDependencies.daggerCompiler
+    )
+}

@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion GokadaVersions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion GokadaVersions.minSdkVersion
+        targetSdkVersion GokadaVersions.targetSdkVersion
+
+        versionCode GokadaVersions.versionCode
+        versionName GokadaVersions.versionName
+
+        buildConfigField("String", "GOOGLE_MAPS_API", GokadaCoreDependencies.GOOGLE_MAPS_API_KEY_BUILD_CONFIG)
+    }
+    dataBinding {
+        enabled = true
+    }
+    kapt {
+        javacOptions {
+            // Increase the max count of errors from annotation processors.
+            // Default is 100.
+            option("-Xmaxerrs", 2000)
+        }
+    }
+}
+
+dependencies {
+    implementation(
+            fileTree(dir: 'libs', include: ['*.jar']),
+            GokadaCoreDependencies.kotlin,
+            GokadaCoreDependencies.appCompat,
+            GokadaCoreDependencies.coreKtx,
+            GokadaCoreDependencies.constraintLayout,
+            GokadaCoreDependencies.navigationFragmentKtx,
+            GokadaCoreDependencies.navigationUiKtx,
+
+            GokadaGooglePlayDependenciesDependencies.googleMaps,
+            GokadaGooglePlayDependenciesDependencies.googleLocation,
+            GokadaGooglePlayDependenciesDependencies.places,
+
+            GokadaViewDependencies.materialComponent,
+
+            GokadaDependencyInjectionDependencies.dagger,
+            GokadaDependencyInjectionDependencies.daggerAndroidSupport,
+
+            GokadaUtilityDependencies.timber,
+            GokadaUtilityDependencies.mapsLibrary,
+            GokadaUtilityDependencies.rxPermissions,
+            GokadaUtilityDependencies.rxLocation,
+            GokadaUtilityDependencies.mapDirection,
+            GokadaUtilityDependencies.alexanderMaps,
+
+            project(":core"),
+            project(":domain")
+    )
+
+    kapt(
+            GokadaDependencyInjectionDependencies.daggerAndroidProcessor,
+            GokadaDependencyInjectionDependencies.daggerCompiler
+    )
+}
