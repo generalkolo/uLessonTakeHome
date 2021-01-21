@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="Subject"
+            type="com.ulesson.domain.models.SubjectsItem" />
+
+        <variable
+            name="subject"
+            type="com.ulesson.domain.models.SubjectsItem" />
+
+        <variable
+            name="Listener"
+            type="com.ulesson.core.listeners.BindableItemClickListener&lt;Subject>" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppCard2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="@dimen/app_margin"
+        android:onClick="@{() -> Listener.onItemClicked(subject)}"
+        app:setCardViewColor="@{subject.name}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:background="#EA7052">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/holdingGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.20" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/subject_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin"
+                app:imageUrl="@{subject.icon}"
+                app:layout_constraintEnd_toStartOf="@+id/holdingGuide"
+                app:layout_constraintStart_toEndOf="@+id/leftGuide"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_logo" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/subject_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin"
+                android:layout_marginBottom="@dimen/app_margin"
+                android:gravity="end"
+                android:text="@{subject.name}"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/app_mini_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+                app:layout_constraintStart_toEndOf="@+id/subject_image"
+                app:layout_constraintTop_toBottomOf="@+id/subject_image"
+                tools:text="Biology" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

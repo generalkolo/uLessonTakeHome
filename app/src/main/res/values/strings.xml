@@ -1,14 +1,4 @@
 <resources>
-    <string name="app_name">Gokada Android App</string>
-    <string name="title_auth">auth</string>
-    <string name="home">Home</string>
-    <string name="promotions">Promotions</string>
-    <string name="account">Account</string>
-    <string name="your_g_wallet">Your G-Wallet</string>
-    <string name="services">Services</string>
-    <string name="start_a_ride">Start a ride</string>
-    <string name="set_up_g_wallet">Set Up G-Wallet</string>
-    <string name="your_ride_history_text">Your ride history</string>
-
-    <string name="freshchat_file_provider_authority">com.gokada.ng.provider</string>
+    <string name="app_name">uLesson TakeHome App</string>
+    <string name="recently_watched_topics_text">Recently watched topics</string>
 </resources>

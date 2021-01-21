@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="chapter"
+            type="com.ulesson.domain.models.ChaptersItem" />
+
+        <variable
+            name="innerViewModel"
+            type="com.ulesson.takehome.presentation.MainActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/big_margin">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/chapter_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{chapter.name}"
+            android:textColor="#313848"
+            android:textSize="@dimen/app_big_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Rational numbers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/lessons_rec_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/app_margin"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/chapter_name"
+            app:setLessonData="@{chapter.lessons}"
+            app:viewModelParam="@{innerViewModel}"
+            tools:itemCount="4"
+            tools:listitem="@layout/lessons_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

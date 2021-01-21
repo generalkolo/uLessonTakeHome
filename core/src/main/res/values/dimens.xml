@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="gokada_super_app_text_size">14sp</dimen>
-    <dimen name="gokada_super_app_small_text_size">10sp</dimen>
-    <dimen name="gokada_super_app_medium_text_size">12sp</dimen>
-    <dimen name="gokada_super_app_big_text_size">18sp</dimen>
-    <dimen name="gokada_super_app_large_text_size">20sp</dimen>
-    <dimen name="gokada_super_app_super_large_text_size">24sp</dimen>
-
-    <!--Guidelines-->
-    <dimen name="gokada_super_app_big_guideline">32dp</dimen>
-    <dimen name="gokada_super_app_guideline">16dp</dimen>
+    <dimen name="app_text_size">14sp</dimen>
+    <dimen name="app_mini_size">16sp</dimen>
+    <dimen name="app_small_text_size">10sp</dimen>
+    <dimen name="app_medium_text_size">12sp</dimen>
+    <dimen name="app_big_text_size">18sp</dimen>
+    <dimen name="app_large_text_size">20sp</dimen>
+    <dimen name="app_super_large_text_size">24sp</dimen>
 
     <!--Default dimensions-->
-    <dimen name="gokada_super_app_default_spacing">20dp</dimen>
-    <dimen name="gokada_super_app_margin">10dp</dimen>
-    <dimen name="gokada_super_app_small_margin">5dp</dimen>
-    <dimen name="gokada_super_app_big_margin">20dp</dimen>
-    <dimen name="gokada_super_app_extra_big_margin">30dp</dimen>
-    <dimen name="gokada_super_app_extra_extra_big_margin">40dp</dimen>
-    <dimen name="gokada_super_app_padding">10dp</dimen>
-    <dimen name="gokada_super_app_big_padding">20dp</dimen>
-    <dimen name="gokada_card_corner_radius">4dp</dimen>
-    <dimen name="gokada_card_corner_big_radius">10dp</dimen>
-    <dimen name="gokada_card_elevation">5dp</dimen>
-    <dimen name="gokada_home_card_higher_elevation">20dp</dimen>
-    <dimen name="gokada_card_higher_elevation">10dp</dimen>
+    <dimen name="default_spacing">20dp</dimen>
+    <dimen name="app_margin">10dp</dimen>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="big_margin">20dp</dimen>
+    <dimen name="extra_big_margin">30dp</dimen>
+    <dimen name="extra_extra_big_margin">40dp</dimen>
+    <dimen name="app_padding">10dp</dimen>
+    <dimen name="fiften_app_padding">15dp</dimen>
+    <dimen name="big_padding">20dp</dimen>
+    <dimen name="corner_radius">4dp</dimen>
+    <dimen name="card_corner_medium_radius">8dp</dimen>
+    <dimen name="card_corner_big_radius">10dp</dimen>
+    <dimen name="big_card_corner_big_radius">20dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="home_card_higher_elevation">20dp</dimen>
+    <dimen name="card_higher_elevation">10dp</dimen>
 
 </resources>

@@ -4,14 +4,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'androidx.navigation.safeargs'
 android {
-    compileSdkVersion GokadaVersions.compileSdkVersion
+    compileSdkVersion AppVersions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion GokadaVersions.minSdkVersion
-        targetSdkVersion GokadaVersions.targetSdkVersion
+        minSdkVersion AppVersions.minSdkVersion
+        targetSdkVersion AppVersions.targetSdkVersion
 
-        versionCode GokadaVersions.versionCode
-        versionName GokadaVersions.versionName
+        versionCode AppVersions.versionCode
+        versionName AppVersions.versionName
     }
     dataBinding {
         enabled = true
@@ -22,61 +22,49 @@ dependencies {
     implementation (
             fileTree(dir: 'libs', include: ['*.jar']),
 
-            GokadaCoreDependencies.appCompat,
-            GokadaCoreDependencies.coreKtx,
-            GokadaCoreDependencies.navigationFragmentKtx,
-            GokadaCoreDependencies.navigationUiKtx,
+            AppCoreDependencies.appCompat,
+            AppCoreDependencies.coreKtx,
+            AppCoreDependencies.navigationFragmentKtx,
+            AppCoreDependencies.navigationUiKtx,
 
-            GokadaCoreDependencies.constraintLayout,
-            GokadaViewDependencies.materialComponent,
+            AppCoreDependencies.constraintLayout,
+            AppViewDependencies.materialComponent,
 
-            GokadaUtilityDependencies.viewPagerTransformer,
-            GokadaUtilityDependencies.materialRatingBar,
-            GokadaUtilityDependencies.lottie,
+            AppUtilityDependencies.viewPagerTransformer,
+            AppUtilityDependencies.lottie,
 
-            GokadaDependencyInjectionDependencies.dagger,
-            GokadaDependencyInjectionDependencies.daggerAndroidSupport,
+            AppDependencyInjectionDependencies.dagger,
+            AppDependencyInjectionDependencies.daggerAndroidSupport,
 
-            GokadaAsyncDependencies.rxAndroid,
+            AppAsyncDependencies.rxAndroid,
 
-            GokadaAnalyticsDependencies.fabric,
-
-            GokadaGooglePlayDependenciesDependencies.googleMaps,
-            GokadaGooglePlayDependenciesDependencies.playServicesAuth,
-            GokadaGooglePlayDependenciesDependencies.playServicesAuthPhone,
             /**
              * Utility dependencies
              */
-            GokadaUtilityDependencies.timber,
-
-            GokadaViewDependencies.shimmerLayout,
+            AppUtilityDependencies.timber,
 
             project(":local"),
             project(":repository"),
             project(":domain")
     )
 
-    debugImplementation (
-            GokadaUtilityDependencies.debugDatabaseLibrary
-    )
-
     api (
             /**
              * Remote dependencies
              */
-            GokadaNetworkDependencies.okhttp,
-            GokadaNetworkDependencies.loggingInterceptor,
-            GokadaNetworkDependencies.retrofit,
-            GokadaNetworkDependencies.gsonConverter,
-            GokadaNetworkDependencies.rxJavaAdapter,
-            GokadaNetworkDependencies.stetho,
-            GokadaNetworkDependencies.stethoOkhttp,
+            AppNetworkDependencies.okhttp,
+            AppNetworkDependencies.loggingInterceptor,
+            AppNetworkDependencies.retrofit,
+            AppNetworkDependencies.gsonConverter,
+            AppNetworkDependencies.rxJavaAdapter,
+            AppNetworkDependencies.stetho,
+            AppNetworkDependencies.stethoOkhttp,
 
             project(":remote")
     )
 
     kapt(
-            GokadaDependencyInjectionDependencies.daggerAndroidProcessor,
-            GokadaDependencyInjectionDependencies.daggerCompiler
+            AppDependencyInjectionDependencies.daggerAndroidProcessor,
+            AppDependencyInjectionDependencies.daggerCompiler
     )
 }

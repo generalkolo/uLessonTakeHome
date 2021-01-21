@@ -1,1 +1,1 @@
-include ':app', ':local', ':preference', ':remote', ':repository', ':domain', ':auth', ':core', ':map'
+include ':app', ':local',':remote', ':repository', ':domain', ':core'

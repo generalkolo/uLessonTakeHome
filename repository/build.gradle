@@ -6,17 +6,17 @@ dependencies {
     implementation (
             fileTree(dir: 'libs', include: ['*.jar']),
 
-            GokadaCoreDependencies.kotlin,
+            AppCoreDependencies.kotlin,
 
-            GokadaAsyncDependencies.rxJava,
-            GokadaAsyncDependencies.rxAndroid,
+            AppAsyncDependencies.rxJava,
+            AppAsyncDependencies.rxAndroid,
 
-            GokadaDependencyInjectionDependencies.dagger,
+            AppDependencyInjectionDependencies.dagger,
 
             project(":domain")
     )
 
     kapt (
-            GokadaDependencyInjectionDependencies.daggerCompiler
+            AppDependencyInjectionDependencies.daggerCompiler
     )
 }

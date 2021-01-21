@@ -5,13 +5,13 @@ dependencies {
     implementation(
             fileTree(dir: 'libs', include: ['*.jar']),
 
-            GokadaCoreDependencies.kotlin,
+            AppCoreDependencies.kotlin,
 
-            GokadaAsyncDependencies.rxAndroid,
+            AppAsyncDependencies.rxAndroid,
 
-            GokadaDependencyInjectionDependencies.javax,
-            GokadaDependencyInjectionDependencies.javaxAnnotation,
+            AppDependencyInjectionDependencies.javax,
+            AppDependencyInjectionDependencies.javaxAnnotation,
 
-            GokadaAsyncDependencies.rxAndroid,
+            AppAsyncDependencies.rxAndroid,
     )
 }

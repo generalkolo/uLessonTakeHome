@@ -1,33 +1,3 @@
 <resources>
     <string name="module_name">Core</string>
-
-    <string name="formatted_money">₦ %s</string>
-    <string name="cash_text">Cash</string>
-    <string name="button_end_trip_text">End Trip</string>
-    <string name="ride_finished_text">Ride Finished!</string>
-    <string name="or_try_ussd_text">Or Try USSD</string>
-    <string name="rate_your_pilot">Rate Your Pilot</string>
-    <string name="add_additional_comment_hint">Add Additional comment</string>
-    <string name="button_done_text">Done</string>
-    <string name="home">Home</string>
-    <string name="promotions">Promotions</string>
-    <string name="account">Account</string>
-    <string name="NG">NG</string>
-    <string name="NGN_formatter">NGN %s</string>
-    <string name="was_payment_successful_text">Was payment successful?</string>
-    <string name="yes_rb_text">Yes</string>
-    <string name="no_rb_text">No</string>
-    <string name="collect_cash_formatter">Collect Cash from %s!</string>
-    <string name="do_not_collect_cash_text">Do not Collect Cash!</string>
-    <string name="type_card_trip_text">Type: Card Trip</string>
-    <string name="default_notification_channel_id">com.gokada.ng.channel_id</string>
-    <string name="default_chanel_name">General</string>
-    <string name="fcm_message">Gokada</string>
-
-    <!--Notification Strings-->
-    <string name="ride_cancelled_notification_message">Ride Request has been cancelled</string>
-    <string name="ride_picked_up_notification_message">Your Trip has started</string>
-    <string name="pending_pickup_notification_message">Your Pilot has arrived</string>
-    <string name="ride_dropped_off_notification_message">Your Ride has ended</string>
-    <string name="ride_created_notification_message">You have a new Ride Request</string>
 </resources>

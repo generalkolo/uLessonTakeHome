@@ -2,26 +2,20 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'io.fabric'
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'androidx.navigation.safeargs'
 
 android {
-    compileSdkVersion GokadaVersions.compileSdkVersion
+    compileSdkVersion AppVersions.compileSdkVersion
 
     defaultConfig {
-        applicationId GokadaCoreDependencies.packageName
+        applicationId AppCoreDependencies.packageName
 
-        minSdkVersion GokadaVersions.minSdkVersion
-        targetSdkVersion GokadaVersions.targetSdkVersion
+        minSdkVersion AppVersions.minSdkVersion
+        targetSdkVersion AppVersions.targetSdkVersion
 
-        versionCode GokadaVersions.versionCode
-        versionName GokadaVersions.versionName
+        versionCode AppVersions.versionCode
+        versionName AppVersions.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        manifestPlaceholders = [
-                fabric_api_key: GokadaCoreDependencies.FABRIC_API_KEY,
-                google_maps_key: GokadaCoreDependencies.GOOGLE_MAPS_API_KEY
-        ]
 
         vectorDrawables {
             useSupportLibrary = true
@@ -31,6 +25,7 @@ android {
     dataBinding {
         enabled = true
     }
+
     kapt {
         javacOptions {
             // Increase the max count of errors from annotation processors.
@@ -61,61 +56,51 @@ android {
 dependencies {
     implementation(
             fileTree(dir: 'libs', include: ['*.jar']),
-            GokadaCoreDependencies.kotlin,
-            GokadaCoreDependencies.appCompat,
-            GokadaCoreDependencies.coreKtx,
-            GokadaCoreDependencies.lifecycle,
-            GokadaCoreDependencies.constraintLayout,
-            GokadaCoreDependencies.navigationFragmentKtx,
-            GokadaCoreDependencies.navigationUiKtx,
-            GokadaCoreDependencies.multidex,
+            AppCoreDependencies.kotlin,
+            AppCoreDependencies.appCompat,
+            AppCoreDependencies.coreKtx,
+            AppCoreDependencies.lifecycle,
+            AppCoreDependencies.constraintLayout,
+            AppCoreDependencies.navigationFragmentKtx,
+            AppCoreDependencies.navigationUiKtx,
+            AppCoreDependencies.multidex,
 
-            GokadaGooglePlayDependenciesDependencies.googleMaps,
-            GokadaGooglePlayDependenciesDependencies.places,
+            AppDependencyInjectionDependencies.dagger,
+            AppDependencyInjectionDependencies.daggerAndroidSupport,
 
-            GokadaDependencyInjectionDependencies.dagger,
-            GokadaDependencyInjectionDependencies.daggerAndroidSupport,
+            AppViewDependencies.materialComponent,
 
-            GokadaViewDependencies.shimmerLayout,
-            GokadaViewDependencies.fresco,
-            GokadaViewDependencies.materialComponent,
-
-            GokadaUtilityDependencies.recyclerAnimator,
-            GokadaUtilityDependencies.overscrollDecor,
-            GokadaUtilityDependencies.lottie,
-            GokadaUtilityDependencies.timber,
-
-            GokadaAnalyticsDependencies.fabric,
-            GokadaAnalyticsDependencies.analytics,
-
-            GokadaFirebaseDependencies.analytics,
-            GokadaFirebaseDependencies.messaging,
-
-            GokadaWorkManagerDependencies.workManagerRx,
+            AppUtilityDependencies.overscrollDecor,
+            AppUtilityDependencies.recyclerAnimator,
+            AppUtilityDependencies.exoPlayer,
+            AppUtilityDependencies.lottie,
+            AppUtilityDependencies.timber,
+            AppUtilityDependencies.glide,
 
             project (":core"),
             project (":domain"),
-            project (":auth"),
             project (":repository"),
             project (":local"),
-            project (":map"),
-            project (":preference"),
             project (":remote")
     )
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.room:room-runtime:2.2.6'
+    annotationProcessor 'androidx.room:room-compiler:2.2.6'
 
     kapt(
-            GokadaDependencyInjectionDependencies.daggerAndroidProcessor,
-            GokadaDependencyInjectionDependencies.daggerCompiler,
-            GokadaCoreDependencies.lifecycleCompiler
+            AppDependencyInjectionDependencies.daggerAndroidProcessor,
+            AppDependencyInjectionDependencies.daggerCompiler,
+            AppCoreDependencies.lifecycleCompiler
     )
 
     testImplementation(
-            GokadaTestDependencies.junit
+            AppTestDependencies.junit
     )
 
 
     androidTestImplementation(
-            GokadaAndroidTestDependencies.espresso,
-            GokadaAndroidTestDependencies.testRunner
+            AppAndroidTestDependencies.espresso,
+            AppAndroidTestDependencies.testRunner
     )
 }

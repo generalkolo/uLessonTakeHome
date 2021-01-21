@@ -4,14 +4,14 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion GokadaVersions.compileSdkVersion
+    compileSdkVersion AppVersions.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion GokadaVersions.minSdkVersion
-        targetSdkVersion GokadaVersions.targetSdkVersion
+        minSdkVersion AppVersions.minSdkVersion
+        targetSdkVersion AppVersions.targetSdkVersion
 
-        versionCode GokadaVersions.versionCode
-        versionName GokadaVersions.versionName
+        versionCode AppVersions.versionCode
+        versionName AppVersions.versionName
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -33,20 +33,20 @@ android {
 dependencies {
     implementation (
             fileTree(dir: 'libs', include: ['*.jar']),
-            GokadaCoreDependencies.kotlin,
-            GokadaCoreDependencies.coreKtx,
+            AppCoreDependencies.kotlin,
+            AppCoreDependencies.coreKtx,
 
-            GokadaPersistenceDependencies.room,
-            GokadaPersistenceDependencies.roomRx,
-            GokadaPersistenceDependencies.gson,
+            AppPersistenceDependencies.room,
+            AppPersistenceDependencies.roomRx,
+            AppPersistenceDependencies.gson,
 
-            GokadaDependencyInjectionDependencies.javax,
-            GokadaDependencyInjectionDependencies.javaxAnnotation,
+            AppDependencyInjectionDependencies.javax,
+            AppDependencyInjectionDependencies.javaxAnnotation,
 
             project(":repository")
     )
 
     kapt (
-            GokadaPersistenceDependencies.roomCompiler
+            AppPersistenceDependencies.roomCompiler
     )
 }

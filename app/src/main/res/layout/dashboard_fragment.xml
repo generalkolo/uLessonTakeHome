@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E5E5E5"
+        tools:context=".presentation.dashboard.DashboardFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_hand" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_cure" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="Hello Simbi"
+            android:textColor="#313848"
+            android:textSize="@dimen/app_big_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toEndOf="@+id/leftGuide"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subjects_rec_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_big_margin"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toEndOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/username"
+            app:spanCount="2"
+            tools:itemCount="5"
+            tools:listitem="@layout/subjects_item" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/recently_watched_topics"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/big_margin"
+            android:text="@string/recently_watched_topics_text"
+            android:textColor="#313848"
+            android:textSize="@dimen/app_big_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toEndOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/subjects_rec_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recently_watched_rec_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/big_margin"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toEndOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/recently_watched_topics"
+            tools:itemCount="2"
+            tools:listitem="@layout/videos_item" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/view_more_less_btn"
+            style="@style/bigButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/extra_big_margin"
+            android:layout_marginBottom="@dimen/app_margin"
+            android:background="@drawable/ic_btn_ground"
+            android:text="View All"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuide"
+            app:layout_constraintStart_toEndOf="@+id/leftGuide"
+            app:layout_constraintTop_toBottomOf="@+id/recently_watched_rec_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

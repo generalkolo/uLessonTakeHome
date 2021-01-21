@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="GokadaSuperAppTheme.Home" parent="GokadaSuperAppTheme.NoActionBar">
+
+    <style name="AppTheme.Home" parent="AppTheme.NoActionBar">
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
+    </style>
+
+    <style name="bigButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:padding">@dimen/fiften_app_padding</item>
     </style>
 </resources>

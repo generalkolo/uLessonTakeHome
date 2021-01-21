@@ -6,11 +6,11 @@
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorOnSurface">#FFFFFF</color>
 
-    <color name="gokada_green">#00C795</color>
+    <color name="green">#00C795</color>
     <color name="default_text_color">#191919</color>
     <color name="faint_text_color">#AAA8A8</color>
     <color name="faint_text_color_2">#FDE7E7E7</color>
-    <color name="deeper_gokada_green">#12926A</color>
+    <color name="deeper_green">#12926A</color>
 
     <color name="red">#FF0000</color>
     <color name="warning">#ffc107</color>

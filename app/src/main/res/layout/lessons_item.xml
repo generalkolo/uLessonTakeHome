@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import
+            alias="Lesson"
+            type="com.ulesson.domain.models.LessonsItem" />
+
+        <variable
+            name="lesson"
+            type="com.ulesson.domain.models.LessonsItem" />
+
+        <variable
+            name="Listener"
+            type="com.ulesson.core.listeners.BindableItemClickListener&lt;Lesson>" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:onClick="@{() -> Listener.onItemClicked(lesson)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:padding="@dimen/big_padding">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/topics_image"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                app:imageUrl="@{lesson.icon}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/dummy_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/topics_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/app_margin"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{lesson.name}"
+                android:textColor="#313848"
+                android:textSize="@dimen/app_big_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topics_image"
+                tools:text="Characteristics of Living Things" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
